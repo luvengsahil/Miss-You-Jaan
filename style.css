@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #ff6f91, #ff9671);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 45px 22px;
+  animation: romanticIn 1.4s ease forwards;
+}
+
+.page.active {
+  display: block;
+}
+
+.page.scroll {
+  min-height: auto;
+  padding-bottom: 80px;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+p {
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.quote {
+  background: rgba(255,255,255,0.22);
+  margin: 18px auto;
+  padding: 20px;
+  border-radius: 22px;
+  max-width: 760px;
+  font-size: 20px;
+}
+
+button {
+  margin-top: 35px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  background: white;
+  color: #ff4d6d;
+  font-weight: bold;
+}
+
+img {
+  width: 88%;
+  max-width: 300px;
+  border-radius: 22px;
+  margin: 14px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.45);
+}
+
+@keyframes romanticIn {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.03);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.page.exit {
+  animation: romanticOut 0.8s ease forwards;
+}
+
+@keyframes romanticOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 24px;
+  animation: float 6.5s linear infinite;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
